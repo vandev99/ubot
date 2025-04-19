@@ -30,10 +30,13 @@ async def _(client, message):
 
     if user.id in prem_users:
         return await msg.edit(f"""
-<blockquote><b>ɴᴀᴍᴇ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
-<b>ɪᴅ: `{user.id}`</b>
-<b>ᴋᴇᴛᴇʀᴀɴɢᴀɴ: ꜱᴜᴅᴀʜ ᴘʀᴇᴍɪᴜᴍ</ci></b>
-<b>ᴇxᴘɪʀᴇᴅ: {get_bulan} ʙᴜʟᴀɴ</b></blockquote>
+<blockquote><b>🜲 ɪɴꜰᴏʀᴍᴀꜱɪ ᴜꜱᴇʀ!</b>
+<b>👤 ɴᴀᴍᴀ: [{user.first_name} {user.last_name or ''}](tg://user?id={user.id})</b>
+<b>🆔 ɪᴅ:</b> `{user.id}`
+<b>⌛ ᴇxᴘɪʀᴇᴅ: <code>ᴀɴᴅᴀ ꜱᴜᴅᴀʜ ᴘʀᴇᴍɪᴜᴍ</code></b>
+
+<b>🜲 ᴋᴇᴛᴇʀᴀɴɢᴀɴ!</b>
+<b>📚 ᴊɪᴋᴀ ʙᴏᴛ ᴛɪᴅᴀᴋ ʙᴇʀꜰᴜɴɢꜱɪ ʜᴜʙᴜɴɢɪ ᴏᴡɴᴇʀ ᴀᴛᴀᴜ /ʀᴇꜱᴛᴀʀᴛ ʙᴏᴛ</b></blockquote>
 """
         )
 
@@ -121,7 +124,7 @@ async def _(client, message):
         try:
             user = await bot.get_users(user_id)
             count += 1
-            userlist = f"• {count}: <a href=tg://user?id={user.id}>{user.first_name} {user.last_name or ''}</a> > <code>{user.id}</code>"
+            userlist = f"• {count}. <a href=tg://user?id={user.id}>{user.first_name} {user.last_name or ''}</a> > <code>{user.id}</code>"
         except Exception:
             continue
         text += f"<blockquote><b>{userlist}\n</blockquote></b>"
@@ -130,11 +133,11 @@ async def _(client, message):
     else:
         await message.reply_text(text)
 
-
 @PY.UBOT("seles")
 async def _(client, message):
     user = message.from_user
-    if user.id != OWNER_ID:
+    admin_id = await get_list_from_vars(bot.me.id, "ADMIN_USERS")
+    if user.id not in admin_id:
         return
     msg = await message.reply("ꜱᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏꜱᴇꜱ...")
     user_id = await extract_user(message)
@@ -174,7 +177,8 @@ async def _(client, message):
 @PY.UBOT("unseles")
 async def _(client, message):
     user = message.from_user
-    if user.id != OWNER_ID:
+    admin_id = await get_list_from_vars(bot.me.id, "ADMIN_USERS")
+    if user.id not in admin_id:
         return
     msg = await message.reply("ꜱᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏꜱᴇꜱ...")
     user_id = await extract_user(message)

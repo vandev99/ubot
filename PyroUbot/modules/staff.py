@@ -2,10 +2,10 @@ from PyroUbot import *
 
 __MODULE__ = "ꜱᴛᴀꜰꜰ"
 __HELP__ = """
-<blockquote>Bantuan Untuk Staff
-
-perintah : <code>{0}staff</code>
-    untuk mendapatkan informaꜱi ꜱeluruh ꜱtaff grup</blockquote>
+<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ꜱᴛᴀꜰꜰ ⦫</b>
+<blockquote>
+ᚗ perintah : <code>{0}staff</code>
+⊶ untuk mendapatkan informaꜱi ꜱeluruh ꜱtaff grup</blockquote>
 """
 import os
 from PyroUbot import *

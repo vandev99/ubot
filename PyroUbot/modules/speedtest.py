@@ -1,7 +1,6 @@
 import asyncio
 import psutil
 from datetime import datetime
-from speedtest import Speedtest
 from pyrogram import Client, filters
 from PyroUbot import *
 

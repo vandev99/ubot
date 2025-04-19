@@ -5,25 +5,25 @@ from PyroUbot import *
 # Masukkan API Key Anda di sini
 API_KEY = "moire"  # Ganti dengan API key yang benar
 
-__MODULE__ = "ᴛᴇxᴛᴘʀᴏ 2"
+__MODULE__ = "ᴛᴇxᴛᴘʀᴏ 3"
 __HELP__ = """
-<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛᴇxᴛᴘʀᴏ 2 ⦫<b>
+<b>⦪ ʙᴀɴᴛᴜᴀɴ ᴜɴᴛᴜᴋ ᴛᴇxᴛᴘʀᴏ 3 ⦫<b>
 
 <blockquote>⎆ perintah :
-ᚗ <code>{0}neon</code> teks
-⊷ membuat gambar dengan efek neon.
+ᚗ <code>{0}glossy</code> teks
+⊷ membuat gambar dengan efek glossy.
 
-ᚗ <code>{0}neongalaxy</code> teks
-⊷ membuat gambar dengan efek neon galaxy.
+ᚗ <code>{0}watercolor</code> teks
+⊷ membuat gambar dengan efek water color.
 
-ᚗ <code>{0}neongreen</code> teks
-⊷ membuat gambar dengan efek neon green.
+ᚗ <code>{0}multicolor</code> teks
+⊷ membuat gambar dengan efek multi color.
 
-ᚗ <code>{0}brokenglass</code> teks
-⊷ membuat gambar dengan efek broken glass.
+ᚗ <code>{0}robot</code> teks
+⊷ membuat gambar dengan efek robot.
 
-ᚗ <code>{0}artpapper</code> teks
-⊷ membuat gambar dengan efek art papper.
+ᚗ <code>{0}scifi</code> teks
+⊷ membuat gambar dengan efek scifi.
 </blockquote>
 
 """
@@ -69,27 +69,27 @@ async def process_image_command(client, message, api_url, command_name):
         await message.reply_text("Gagal membuat gambar. Coba lagi nanti.")
 
 # Handler untuk setiap perintah
-@PY.UBOT("neon")
+@PY.UBOT("glossy")
 async def eraser_command(client, message):
-    api_url = "https://api.botcahx.eu.org/api/textpro/neon-light"
-    await process_image_command(client, message, api_url, "neon-light")
+    api_url = "https://api.botcahx.eu.org/api/textpro/glossy"
+    await process_image_command(client, message, api_url, "glossy")
 
-@PY.UBOT("neongalaxy")
+@PY.UBOT("watercolor")
 async def papercut_command(client, message):
-    api_url = "https://api.botcahx.eu.org/api/textpro/neon-galaxy"
-    await process_image_command(client, message, api_url, "neon-galaxy")
+    api_url = "https://api.botcahx.eu.org/api/textpro/water-color"
+    await process_image_command(client, message, api_url, "water-color")
 
-@PY.UBOT("neongreen")
+@PY.UBOT("multicolor")
 async def papercut_command(client, message):
-    api_url = "https://api.botcahx.eu.org/api/textpro/neon-green"
-    await process_image_command(client, message, api_url, "neon-green")
+    api_url = "https://api.botcahx.eu.org/api/textpro/multi-color"
+    await process_image_command(client, message, api_url, "multi-color")
 
-@PY.UBOT("brokenglass")
+@PY.UBOT("robot")
 async def papercut_command(client, message):
-    api_url = "https://api.botcahx.eu.org/api/textpro/broken-glass"
-    await process_image_command(client, message, api_url, "broken-glass")
+    api_url = "https://api.botcahx.eu.org/api/textpro/robot"
+    await process_image_command(client, message, api_url, "robot")
 
-@PY.UBOT("artpapper")
+@PY.UBOT("scifi")
 async def papercut_command(client, message):
-    api_url = "https://api.botcahx.eu.org/api/textpro/art-papper"
-    await process_image_command(client, message, api_url, "art-papper")
+    api_url = "https://api.botcahx.eu.org/api/textpro/scifi"
+    await process_image_command(client, message, api_url, "scifi")

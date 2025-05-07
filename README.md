@@ -3,7 +3,7 @@
 apt update && apt upgrade -y
 ```
 ```
-git clone https://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@github.com/ricoogh/ubot
+git clone https://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@github.com/vandev99/ubot
 ```
 ```
 cd ubot && screen -S ubot
@@ -28,21 +28,6 @@ cp sample.env .env && nano .env
 ```
 ```
 screen -S ubot
-```
-```
-python3 -m PyroUbot
-```
-```
----------- Menghidupan jika ubot mati -------------
-```
-```
-cd ubotalfnew && screen -S ubotalfnew
-```
-```
-python3 -m venv venv && source venv/bin/activate
-```
-```
-screen -S ubotalfnew
 ```
 ```
 python3 -m PyroUbot

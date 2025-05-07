@@ -21,7 +21,7 @@ async def main():
         try:
             await asyncio.wait_for(ubot_.start(), timeout=10)
         except asyncio.TimeoutError:
-            await remove_ubot(int(_ubot["xzhee"]))
+            await remove_ubot(int(_ubot["name"]))
             print(f"[ɪɴғᴏ]: {int(_ubot['name'])} ᴛɪᴅᴀᴋ ᴅᴀᴘᴀᴛ ᴍᴇʀᴇsᴘᴏɴᴇ")
         except Exception:
             await remove_ubot(int(_ubot["name"]))

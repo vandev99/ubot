@@ -40,3 +40,34 @@ async def broadcast_bot(client, message):
         except Exception:
             pass
     return await msg.edit(f"⌭ ʙᴇʀʜᴀsɪʟ ᴍᴇɴɢɪʀɪᴍ ᴘᴇsᴀɴ ᴋᴇ {done} ᴜʙᴏᴛ")
+
+@PY.BOT("bcast")
+@PY.ADMIN
+async def _(client, message):
+    msg = await message.reply("<blockquote><b>okee proses Boy...</blockquote></b>\n\n<blockquote><b>mohon bersabar untuk menunggu proses broadcast sampai selesai</blockquote></b>", quote=True)
+
+    send = get_message(message)
+    if not send:
+        return await msg.edit("mohon balaꜱ atau ketik ꜱeꜱuatu...")
+        
+    susers = await get_list_from_vars(client.me.id, "SAVED_USERS")
+    done = 0
+    for chat_id in susers:
+        try:
+            if message.reply_to_message:
+                await send.forward(chat_id)
+            else:
+                await client.send_message(chat_id, send)
+            done += 1
+        except FloodWait as e:
+            await asyncio.sleep(e.value)
+            if message.reply_to_message:
+                await send.forward(chat_id)
+            else:
+                await client.send_message(chat_id, send)
+            done += 1
+        except Exception:
+            pass
+
+    return await msg.edit(f"<blockquote><b>Pesan broadcast berhasil terkirim ke {done} user</blockquote></b>\n\n<blockquote><b>`USERBOT 5K/BULAN BY` @Ipaaaaajaalaah_bot</b></blockquote>")
+            

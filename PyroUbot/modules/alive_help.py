@@ -59,15 +59,11 @@ async def _(client, inline_query):
             uptime = await get_time((time() - start_time))
             psr = await EMO.PASIR(client)
             msg = f"""
-<blockquote>⌬ {bot.me.mention}
-ᚗ status: {status} 
-ᚗ {psr} expired_on: {exp} 
-ᚗ dc_id: {my.me.dc_id}
-ᚗ ping_dc: {ping} ms
-ᚗ peer_users: {users} users
-ᚗ peer_group: {group} group
-ᚗ start_uptime: {uptime}</blockquote>
-        <blockquote><b>ᣃ࿈ ᴜsᴇʀʙᴏᴛ ࿈ᣄ</b></blockquote>
+⌬ ᴊᴇʀᴢᴢ ᴜꜱᴇʀ ʙᴏᴛ
+ • ꜱᴛᴀᴛᴜꜱ: {status} 
+ • ᴇxᴘɪʀᴇᴅ: {exp} 
+ • ᴜᴘᴛɪᴍᴇ: {uptime}
+        <blockquote><b>🜲 ᴜꜱᴇʀʙᴏᴛ ʙʏ @jerzzofficial</b></blockquote>
 """
             await client.answer_inline_query(
                 inline_query.id,
@@ -130,7 +126,7 @@ async def _(client, callback_query):
     os.execl(sys.executable, sys.executable, "-m", "userbot-ᴘʀᴇᴍ")
 
 
-@PY.UBOT("help")
+@PY.UBOT("yysabaryajerzzzhehehe")
 async def user_help(client, message):
     if not get_arg(message):
         try:
@@ -156,7 +152,7 @@ async def user_help(client, message):
 @PY.INLINE("^user_help")
 async def user_help_inline(client, inline_query):
     SH = await ubot.get_prefix(inline_query.from_user.id)
-    msg = f"<blockquote><b>✮ ᴍᴇɴᴜ ɪɴʟɪɴᴇ <a href=tg://user?id={inline_query.from_user.id}>{inline_query.from_user.first_name} {inline_query.from_user.last_name or ''}</a>\n • Plugins: {len(HELP_COMMANDS)}\n • Prefix: {' '.join(SH)}\n • Owner: @deakv</b></blockquote>"
+    msg = f"<b>🜲 ʜᴇʟᴘ ᴍᴇɴᴜ\n • ᴍᴏᴅᴜʟᴇs: {len(HELP_COMMANDS)}\n • ᴘʀᴇꜰɪx: {' '.join(SH)}\n • ᴏᴡɴᴇʀ: @jerzzofficial</b>"
     results = [InlineQueryResultArticle(
         title="Help Menu!",
         reply_markup=InlineKeyboardMarkup(paginate_modules(0, HELP_COMMANDS, "help")),
@@ -181,7 +177,7 @@ async def help_callback(client, callback_query):
     tutup_match = re.match(r"help_tutup\((.+?)\)", callback_query.data)
     back_match = re.match(r"help_back", callback_query.data)
     SH = await ubot.get_prefix(callback_query.from_user.id)
-    top_text = f"<blockquote><b>✮ ᴍᴇɴᴜ ɪɴʟɪɴᴇ <a href=tg://user?id={callback_query.from_user.id}>{callback_query.from_user.first_name} {callback_query.from_user.last_name or ''}</a>\n • Plugins: {len(HELP_COMMANDS)}\n • Prefix: {' '.join(SH)}\n • Owner: @deakv</b></blockquote>"
+    top_text = f"<b>🜲 ʜᴇʟᴘ ᴍᴇɴᴜ\n • ᴍᴏᴅᴜʟᴇs: {len(HELP_COMMANDS)}\n • ᴘʀᴇꜰɪx: {' '.join(SH)}\n • ᴏᴡɴᴇʀ: @jerzzofficial</b>"
 
     if mod_match:
         module = (mod_match.group(1)).replace(" ", "_")
@@ -189,7 +185,7 @@ async def help_callback(client, callback_query):
         button = [[InlineKeyboardButton("♅ ʙᴀᴄᴋ ♅", callback_data="help_back")]]
         await callback_query.edit_message_text(
             text=text 
-            + '\n<blockquote><b>ᣃ࿈ ᴜsᴇʀʙᴏᴛ ᴘʀᴇᴍɪᴜᴍ ࿈ᣄ</a> </b></blockquote>',
+            + '\n<blockquote><b>ᣃ࿈ alfsefyy ࿈ᣄ</a> </b></blockquote>',
             reply_markup=InlineKeyboardMarkup(button),
             disable_web_page_preview=True,
         )

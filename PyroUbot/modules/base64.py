@@ -5,16 +5,15 @@ from pyrogram.enums import ChatAction, ParseMode
 from pyrogram import filters
 from pyrogram.types import Message
 
-__MODULE__ = "ʙɪɴɢ ᴄʜᴀᴛ"
+__MODULE__ = "ᴇɴᴄ ʙᴀsᴇ64"
 __HELP__ = """
-<blockquote><b>🜲 ʜᴇʟᴘ ᴍᴇɴᴜ! ᴄᴀʀᴀ ᴘᴇɴɢɢᴜɴᴀᴀɴ:</b></blockquote>
+<blockquote><b>Bantuan Untuk base64
 
-<b>Perintah : </b><code>{0}bing</code> [query]
- <b>• Berfunsgi mencari informasi dan membuat tugas tertentu</b>
+perintah : <code>{0}base64</code>
+untuk encode base64 contoh <code>{0}base64</code> [code]</b></blockquote>
 """
 
-
-@PY.UBOT("bing")
+@PY.UBOT("base64")
 @PY.TOP_CMD
 async def chat_gpt(client, message):
     try:
@@ -22,18 +21,18 @@ async def chat_gpt(client, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "<emoji id=5019523782004441717>❌</emoji> <b>Penggunaan Salah!\n📚 Contoh : .bing [query]"
+                "<emoji id=5019523782004441717>❌</emoji>mohon gunakan format\ncontoh : .base64 [code]"
             )
         else:
-            prs = await message.reply_text(f"<emoji id=5469745532693923461>♾</emoji> Memproses Permintaan")
+            prs = await message.reply_text(f"<emoji id=6298414727487818323>😉</emoji>proccesing encode base64....")
             a = message.text.split(' ', 1)[1]
-            response = requests.get(f'https://api.botcahx.eu.org/api/search/bing-chat?text={a}&apikey=Jerzz')
+            response = requests.get(f'https://vapis.my.id/api/tobase64?q={a}')
 
             try:
-                if "message" in response.json():
-                    x = response.json()["message"]                  
+                if "result" in response.json():
+                    x = response.json()["result"]                  
                     await prs.edit(
-                      f"<blockquote>{x}</blockquote>"
+                      f"<blockquote>`{x}`</blockquote>"
                     )
                 else:
                     await message.reply_text("No 'results' key found in the response.")
